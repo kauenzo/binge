@@ -13,7 +13,7 @@ export default function FooterActions({
   }, [action])
 
   return (
-    <div className='flex items-center justify-between w-full'>
+    <div className='flex items-center justify-between w-full max-w-1/3'>
       {action.map((ac, index) => (
         <div
           className='w-full items-center justify-center text-center flex flex-col'

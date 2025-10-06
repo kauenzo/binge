@@ -1,4 +1,4 @@
-export type TvShow = {
+export interface TvShow {
   Cast: Cast[]
   Genres: Genre[]
   ID: string
@@ -8,17 +8,23 @@ export type TvShow = {
   Year: string
 }
 
-type Image = {
+export interface Image {
   Background: string
 }
 
-type Cast = {
+export interface Cast {
   Name: string
   ID: string
 }
 
-type Genre = {
+export interface Genre {
   ID: string
   Title: string
+}
+
+export interface TvShowMeta {
+  evaluation: number
+  country: string
+  ageClassification: number | string
 }
 

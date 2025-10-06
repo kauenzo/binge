@@ -1,12 +1,16 @@
 import { Api } from '@/lib/api'
-import { Episode } from '@/types/episode'
-
-const BASE_URL =
-  'https://agile-releases.s3.us-east-1.amazonaws.com/tests/episodes/SHOW123.json'
+import { API_URLS } from '@/lib/constants/api'
+import { Episode } from '@/lib/types/episode'
 
 export class EpisodeService {
-  static async getEpisodes(): Promise<Episode> {
-    return Api.get<Episode>(BASE_URL)
+  static async getEpisodes(): Promise<Episode[]> {
+    try {
+      const episodes = await Api.get<Episode[]>(API_URLS.EPISODES)
+      return episodes
+    } catch (error) {
+      console.error('Erro ao buscar episódios:', error)
+      throw new Error('Falha ao carregar episódios')
+    }
   }
 }
 

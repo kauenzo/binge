@@ -1,0 +1,47 @@
+@use 'mixins' as *;
+
+// Classes utilitárias
+
+/* Esconder scrollbar */
+.scrollbar-hide {
+  @include hide-scrollbar;
+}
+
+// Classes de animação
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Classes de transição
+.transition-smooth {
+  transition: all 0.3s ease-in-out;
+}
+
+// Classes de hover
+.hover-scale {
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Classes de foco
+.focus-ring {
+  &:focus {
+    outline: 2px solid var(--text-accent);
+    outline-offset: 2px;
+  }
+}
+

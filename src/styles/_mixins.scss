@@ -1,0 +1,44 @@
+// Mixins para reutilização de estilos
+
+// Mixin para scrollbar escondida
+@mixin hide-scrollbar {
+  -ms-overflow-style: none; /* IE e Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+  }
+}
+
+// Mixin para texto com tamanho e peso específicos
+@mixin text-style(
+  $size,
+  $weight,
+  $color: var(--text-primary),
+  $line-height: 1.2
+) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $line-height;
+}
+
+// Mixin para responsividade
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (min-width: 769px) and (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+}
+
