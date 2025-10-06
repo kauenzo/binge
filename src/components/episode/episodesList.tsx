@@ -68,7 +68,7 @@ function EpisodesListComponent({ episodes }: EpisodesListProps) {
         onSeasonSelect={handleSelectSeason}
       />
 
-      <ul className='flex flex-col max-h-[calc(100vh-12rem)] overflow-y-auto pb-40 pr-2 overflow-x-auto scrollbar-hide'>
+      <ul className='flex flex-col h-[calc(100vh-24rem)] overflow-y-auto pb-4 pr-2 scrollbar-hide'>
         {currentEpisodes.map((episode, index) => (
           <div
             key={episode.ID}
